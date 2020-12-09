@@ -46,9 +46,9 @@ var apexSignature = {
         }, {
             dataType: 'html',
             // SUCESS function
-            success: function() {
+            success: function(data) {
                 // add apex event
-                $('#' + pRegionId).trigger('apexsignature-saved-db');
+                $('#' + pRegionId).trigger('apexsignature-saved-db', JSON.parse(data ? data : '{}'));
                 // callback
                 callback();
             },
